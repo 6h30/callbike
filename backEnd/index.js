@@ -7,6 +7,10 @@ const indexRoutes = require('./routes/indexRouter');
 const usersRoutes = require('./routes/usersRouter');
 const tripsRoutes = require('./routes/tripsRouter');
 
+const requestsRoutes = require('./routes/requestsRouter');
+const requestConsumer = require('./services/requestsConsumer');
+
+
 // Middleware for parsing JSON and urlencoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +21,7 @@ app.use('/api', indexRoutes);
 app.use('/api', tripsRoutes);
 app.use('/api', usersRoutes);
 
+app.use('/api/trip-requests', requestsRoutes);
 
 // Thêm middleware để xử lý lỗi 404
 app.use((req, res, next) => {
