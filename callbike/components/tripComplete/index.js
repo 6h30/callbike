@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 // import { useSelector } from 'react-redux';
 
 const TripComplete = () => {
-
+    const handleCustomerReview = () => {
+        router.push({
+          pathname: '/',
+        });
+      };
     return (
         <View style={styles.reviewContainer}>
             <Text style={styles.title}>Hoàn thành chuyến đi!</Text>
@@ -15,8 +19,8 @@ const TripComplete = () => {
                 <Text style={styles.infoText}>Khoảng cách: {routeDistance} km</Text>
             </View> */}
 
-            {/* <Button title="Đánh giá chuyến đi" onPress={handleCustomerReview} /> */}
-            <Button title="Đánh giá chuyến đi" />
+            <Button title="Đánh giá chuyến đi" onPress={handleCustomerReview} />
+            
         </View>
     );
 };
